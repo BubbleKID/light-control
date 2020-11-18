@@ -10,7 +10,7 @@ import Appear from '../../src/Appear';
 import withTemplate from '../withTemplate';
 import createCompiler from '../createCompiler';
 import Header from './Header';
-import Footer from './Footer';
+import IconPanel from './IconPanel';
 import Wrap from './Wrap';
 import Link from './Link';
 
@@ -82,57 +82,48 @@ class Content extends React.Component {
         background={resources.background}
         pattern={resources.pattern}
       >
-        {anim => (
-        <ArwesContent className={classes.root}>
+        {(anim) => (
+          <ArwesContent className={classes.root}>
+            <Header
+              className={classes.header}
+              animate
+              show={anim.entered}
+              animation={{
+                onEntered: () => this.setState({ framed: true }),
+              }}
+              title="Arwes"
+              onLink={this.onLink}
+            />
 
-          <Header
-            className={classes.header}
-            animate
-            show={anim.entered}
-            animation={{
-              onEntered: () => this.setState({ framed: true })
-            }}
-            title='Arwes'
-            onLink={this.onLink}
-          />
-
-          <main className={classes.main}>
-            <Wrap className={classes.wrap}>
-              <Row noMargin col s={12}>
-                <Frame
-                  animate
-                  show={framed}
-                  corners={4}
-                >
-                  {anim2 => (
-                  <Appear
-                    className={classes.content}
-                    animate
-                    show={anim2.entered}
-                  >
-                    {App ? (
-                      <App
-                        compile={this.compile}
-                        {...appProps}
-                      />
-                    ) : (
-                      this.compile(markdown).tree
+            <main className={classes.main}>
+              <Wrap className={classes.wrap}>
+                <Row noMargin col s={12}>
+                  <Frame animate show={framed} corners={4}>
+                    {(anim2) => (
+                      <Appear
+                        className={classes.content}
+                        animate
+                        show={anim2.entered}
+                      >
+                        {App ? (
+                          <App compile={this.compile} {...appProps} />
+                        ) : (
+                          this.compile(markdown).tree
+                        )}
+                      </Appear>
                     )}
-                  </Appear>
-                  )}
-                </Frame>
-              </Row>
-            </Wrap>
-          </main>
+                  </Frame>
+                </Row>
+              </Wrap>
+            </main>
 
-          <Footer
-            className={classes.footer}
-            animate
-            show={anim.entered}
-            onLink={this.onLink}
-          />
-
-        </ArwesContent>
+            <IconPanel
+              className={classes.footer}
+              animate
+              show={anim.entered}
+              onLink={this.onLink}
+            />
+          </ArwesContent>
         )}
       </Arwes>
     );
