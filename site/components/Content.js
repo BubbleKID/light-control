@@ -34,6 +34,7 @@ const styles = (theme) => {
       overflowY: 'auto',
     },
     wrap: {
+      maxWidth: '80vw',
       padding: [theme.margin, 0],
     },
     content: {
@@ -71,7 +72,7 @@ class Content extends React.Component {
   }
 
   render () {
-    const { classes, resources, markdown, App, appProps } = this.props;
+    const { classes, resources, markdown, App, appProps, customWidth } = this.props;
     const { show, framed } = this.state;
 
     return (
@@ -97,8 +98,13 @@ class Content extends React.Component {
 
             <main className={classes.main}>
               <Wrap className={classes.wrap}>
-                <Row noMargin col s={12}>
-                  <Frame animate show={framed} corners={4}>
+                <Row noMargin col s={12} >
+                  <Frame
+                    animate
+                    show={framed}
+                    corners={6}
+                    custom-width={customWidth}
+                  >
                     {(anim2) => (
                       <Appear
                         className={classes.content}

@@ -36,7 +36,6 @@ export default (theme) => {
       display: 'block',
       position: 'relative',
       padding: '1px',
-
       '&$exiting, &$exited': {
         '& $borderLeft, & $borderRight': {
           height: '0%',
