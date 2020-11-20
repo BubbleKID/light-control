@@ -4,6 +4,7 @@ import cx from 'classnames';
 import withStyles from '../../src/tools/withStyles';
 import Frame from '../../src/Frame';
 import Image from '../../src/Image';
+import Button from '../../src/Button';
 
 
 import Link from './Link';
@@ -21,7 +22,9 @@ const Icon = (props) => {
   const cls = cx(classes.root, className);
   return (
     <Frame animate corners={6} className={classes.root}>
-      <Image animate resources={url}></Image>
+      <Button animate layer="success">
+        <Image animate resources={url}></Image>
+      </Button>
     </Frame>
   );
 };

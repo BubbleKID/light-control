@@ -114,7 +114,7 @@ class Content extends React.Component {
                         {App ? (
                           <App compile={this.compile} {...appProps} />
                         ) : (
-                          this.compile(markdown).tree
+                          this.compile(markdown[0]).tree
                         )}
                       </Appear>
                     )}
