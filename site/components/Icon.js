@@ -10,16 +10,18 @@ import Link from './Link';
 
 const styles = (theme) => ({
   root: {
-    marginRight: '5%'
+    marginRight: '30px',
+    marginBottom: '30px',
+    flex: 'flex: 0 0 33.3333%;',
   },
 });
 
 const Icon = (props) => {
-  const { onLink, classes, className, ...etc } = props;
+  const { onLink, classes, className, url, ...etc } = props;
   const cls = cx(classes.root, className);
   return (
     <Frame animate corners={6} className={classes.root}>
-      <Image animate resources="../../static/img/icons/image001.png"></Image>
+      <Image animate resources={url}></Image>
     </Frame>
   );
 };

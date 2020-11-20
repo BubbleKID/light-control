@@ -12,13 +12,16 @@ import FooterAuthor from './FooterAuthor';
 const styles = (theme) => ({
   root: {
     textAlign: 'left',
-    height: '30%'
+    height: '30%',
   },
   wrap: {
+    maxWidth: '80vw',
     padding: [theme.padding, 0],
   },
   content: {
     display: 'flex',
+    flexWrap: 'wrap',
+    
   },
   left: {
     flex: '1 1 auto',
@@ -43,8 +46,9 @@ const IconPanel = (props) => {
         <Wrap className={classes.wrap}>
           <Row noMargin col s={12}>
             <div className={classes.content}>
-              <Icon></Icon>
-              <Icon></Icon>
+              {Array.from(Array(17).keys()).map((item) => (
+                <Icon key={item} url={`../../static/img/icons/${item}.png`}></Icon>
+              ))}
             </div>
           </Row>
         </Wrap>
