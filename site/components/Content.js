@@ -55,6 +55,7 @@ class Content extends React.Component {
     this.state = {
       show: false,
       framed: false,
+      currentMarkdown: 0
     };
 
     // Markdown compiler
@@ -65,6 +66,14 @@ class Content extends React.Component {
         }
       }
     });
+    this.setMarkdown = this.setMarkdown.bind(this);
+  }
+
+  setMarkdown = (num) => {
+    console.log(num);
+    return this.setState({
+      currentMarkdown: num
+    });
   }
 
   componentDidMount () {
@@ -73,7 +82,7 @@ class Content extends React.Component {
 
   render () {
     const { classes, resources, markdown, App, appProps, customWidth } = this.props;
-    const { show, framed } = this.state;
+    const { show, framed, currentMarkdown } = this.state;
 
     return (
       <Arwes
@@ -114,7 +123,7 @@ class Content extends React.Component {
                         {App ? (
                           <App compile={this.compile} {...appProps} />
                         ) : (
-                          this.compile(markdown[0]).tree
+                          this.compile(markdown[currentMarkdown]).tree
                         )}
                       </Appear>
                     )}
@@ -128,6 +137,7 @@ class Content extends React.Component {
               animate
               show={anim.entered}
               onLink={this.onLink}
+              setMarkdown={this.setMarkdown}
             />
           </ArwesContent>
         )}

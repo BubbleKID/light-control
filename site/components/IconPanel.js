@@ -7,12 +7,11 @@ import { Row } from '../../src/Grid';
 
 import Wrap from './Wrap';
 import Icon from './Icon';
-import FooterAuthor from './FooterAuthor';
 
 const styles = (theme) => ({
   root: {
     textAlign: 'left',
-    height: '30%',
+    height: 'auto',
   },
   wrap: {
     maxWidth: '80vw',
@@ -21,7 +20,6 @@ const styles = (theme) => ({
   content: {
     display: 'flex',
     flexWrap: 'wrap',
-    
   },
   left: {
     flex: '1 1 auto',
@@ -35,26 +33,32 @@ const styles = (theme) => ({
   },
 });
 
-const IconPanel = (props) => {
-  const { onLink, classes, className, ...etc } = props;
 
-  const cls = cx(classes.root, className);
+class IconPanel extends React.Component {
+  constructor (props) {
+    super(props);
+  }
 
-  return (
-    <ArwesFooter className={cls} {...etc}>
-      {(anim) => (
-        <Wrap className={classes.wrap}>
-          <Row noMargin col s={12}>
-            <div className={classes.content}>
-              {Array.from(Array(17).keys()).map((item) => (
-                <Icon key={item} url={`../../static/img/icons/${item}.png`}></Icon>
-              ))}
-            </div>
-          </Row>
-        </Wrap>
-      )}
-    </ArwesFooter>
-  );
-};
+  render () {
+    const {classes, className, setMarkdown,...etc } = this.props;
+    const cls = cx(classes.root, className);
+
+    return (
+      <ArwesFooter className={cls} {...etc}>
+        {(anim) => (
+          <Wrap className={classes.wrap}>
+            <Row noMargin col s={12}>
+              <div className={classes.content}>
+                {Array.from(Array(17).keys()).map((item) => (
+                  <Icon key={item} url={`../../static/img/icons/${item}.png`} num={item} setMarkdown={setMarkdown}></Icon>
+                ))}
+              </div>
+            </Row>
+          </Wrap>
+        )}
+      </ArwesFooter>
+    );
+  }
+}
 
 export default withStyles(styles)(IconPanel);

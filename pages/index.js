@@ -78,7 +78,7 @@ class Home extends React.Component {
     super(...arguments);
     this.state = {
       show: false,
-      loaded: false
+      loaded: false,
     };
 
     this.loader = createLoader();
