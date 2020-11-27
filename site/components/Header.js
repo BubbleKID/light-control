@@ -11,9 +11,10 @@ import Navigation from './Navigation';
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
+    textAlign: 'left',
   },
   wrap: {
+    textAlign: 'center',
     padding: [theme.padding, 0],
   },
   links: {
@@ -48,12 +49,12 @@ const Header = props => {
       {anim => (
       <Wrap className={classes.wrap}>
         <Row noMargin>
-          <Col s={12} m={6}>
+          <Col s={12} m={12} >
             <Brand show={anim.entered} onLink={onLink} />
           </Col>
-          <Col s={12} m={6} className={classes.links}>
+          {/* <Col s={12} m={6} className={classes.links}>
             <Navigation show={anim.entered} onLink={onLink} />
-          </Col>
+          </Col> */}
         </Row>
       </Wrap>
       )}

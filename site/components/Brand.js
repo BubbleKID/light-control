@@ -10,7 +10,7 @@ import Link from './Link';
 const styles = theme => ({
   root: {
     display: 'inline-block',
-    textAlign: 'left',
+    textAlign: 'center',
     '& h1': {
       display: 'inline-block',
       margin: [5, 0, 0, theme.padding / 2],
@@ -32,7 +32,7 @@ function Brand (props) {
       />
       <h1>
         <Words animate show={show}>
-          Arwes
+          安全标志
         </Words>
       </h1>
     </Link>

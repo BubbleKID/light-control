@@ -40,7 +40,7 @@ class IconPanel extends React.Component {
   }
 
   render () {
-    const {classes, className, setMarkdown,...etc } = this.props;
+    const {classes, className, setMarkdown, ...etc } = this.props;
     const cls = cx(classes.root, className);
 
     return (
