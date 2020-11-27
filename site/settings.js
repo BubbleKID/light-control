@@ -51,7 +51,7 @@ module.exports.components = [
   ...module.exports.componentsAnimations
 ];
 
-const baseTitle = 'Arwes - Sci-Fi UI Framework';
+const baseTitle = '安全标志';
 const componentsTitles = {};
 module.exports.components.forEach(name => {
   componentsTitles[`/api/${name.toLowerCase()}`] = `${name} | API | ${baseTitle}`;
