@@ -12,7 +12,7 @@ export default (theme) => {
       display: 'inline-block',
       margin: 0,
       border: 'none',
-      padding: [theme.padding / 2, theme.padding],
+      padding: [theme.padding / 2, theme.padding / 2],
       background: 'transparent',
 
       color: props => theme.color[props.disabled ? 'disabled' : props.layer].base,

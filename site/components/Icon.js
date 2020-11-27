@@ -8,11 +8,15 @@ import Button from '../../src/Button';
 
 const styles = (theme) => ({
   root: {
-    marginRight: '30px',
-    marginBottom: '30px',
+    width: '150px',
+    marginRight: '20px',
+    marginBottom: '20px',
     flex: 'flex: 0 0 33.3333%;',
-    alignItem: 'center'
+    alignItem: 'center',
   },
+  image: {
+    margin: '0px',
+  }
 });
 
   const Icon = (props) => {
@@ -21,7 +25,7 @@ const styles = (theme) => ({
 
   return (
     <Button animate layer="primary" onClick={() => setMarkdown(num)} className={classes.root}>
-      <Image animate resources={url}></Image>
+      <Image animate resources={url} className={classes.image}></Image>
     </Button>
   );
 };
