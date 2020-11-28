@@ -15,7 +15,6 @@ import markdown12 from '../../site/docs/sign/12.md';
 import markdown13 from '../../site/docs/sign/13.md';
 import markdown14 from '../../site/docs/sign/14.md';
 import markdown15 from '../../site/docs/sign/15.md';
-import markdown16 from '../../site/docs/sign/16.md';
 
 const markdown = [
   markdown0,
@@ -34,6 +33,5 @@ const markdown = [
   markdown13,
   markdown14,
   markdown15,
-  markdown16
 ];
 export default withContent({ markdown});

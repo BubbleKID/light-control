@@ -49,7 +49,7 @@ class IconPanel extends React.Component {
           <Wrap className={classes.wrap}>
             <Row noMargin col s={12}>
               <div className={classes.content}>
-                {Array.from(Array(17).keys()).map((item) => (
+                {Array.from(Array(16).keys()).map((item) => (
                   <Icon key={item} url={`../../static/img/icons/${item}.png`} num={item} setMarkdown={setMarkdown}></Icon>
                 ))}
               </div>
