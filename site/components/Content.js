@@ -13,6 +13,7 @@ import Header from './Header';
 import IconPanel from './IconPanel';
 import Wrap from './Wrap';
 import Link from './Link';
+import axios from 'axios';
 
 const styles = (theme) => {
   return {
@@ -71,6 +72,21 @@ class Content extends React.Component {
 
   setMarkdown = (num) => {
     console.log(num);
+    axios.get('http://localhost:3000', {
+      params: {
+        num: num
+      }
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
+
     return this.setState({
       currentMarkdown: num
     });

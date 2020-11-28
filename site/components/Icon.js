@@ -5,7 +5,6 @@ import withStyles from '../../src/tools/withStyles';
 import Image from '../../src/Image';
 import Button from '../../src/Button';
 
-
 const styles = (theme) => ({
   root: {
     width: '150px',

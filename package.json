@@ -44,6 +44,7 @@
     "react-dom": "*"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "classnames": "^2.2.5",
     "d3-path": "^1.0.5",
     "d3-shape": "^1.2.0",
